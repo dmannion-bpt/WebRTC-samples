@@ -70,9 +70,13 @@ function handleDataAvailable(event) {
 function getSupportedMimeTypes() {
   const possibleTypes = [
     'video/webm;codecs=vp9,opus',
+    video/webm;codecs=vp9,vorbis',
     'video/webm;codecs=vp8,opus',
+    'video/webm;codecs=vp8,vorbis',
     'video/webm;codecs=h264,opus',
+    'video/webm;codecs=h264,vorbis',
     'video/mp4;codecs=h264,aac',
+    'video/mp4;codecs=AVC,aac',
   ];
   return possibleTypes.filter(mimeType => {
     return MediaRecorder.isTypeSupported(mimeType);
